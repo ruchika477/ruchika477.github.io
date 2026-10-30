@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ruchika Soni, Web Developer specializing in WordPress, responsive websites and frontend development.">
+<title>Ruchika Soni | Web Developer</title>
+
+<style>
+:root {
+  --purple: #7652cf;
+  --light: #f7f4ff;
+  --dark: #19172f;
+  --text: #666477;
+  --white: #fff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+}
+a { text-decoration: none; }
+.container { width: 90%; max-width: 1120px; margin: auto; }
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #eee9f8;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 76px;
+  gap: 20px;
+}
+.logo { color: var(--purple); font-size: 23px; font-weight: 800; }
+.nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.nav-links a { color: var(--dark); font-size: 14px; }
+.nav-links a:hover { color: var(--purple); }
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: var(--purple);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid var(--purple);
+  transition: .2s;
+}
+.btn:hover { opacity: .85; transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--purple); }
+.hero { background: var(--light); padding: 90px 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 60px;
+}
+.eyebrow {
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h1 { font-size: clamp(38px, 5vw, 62px); line-height: 1.15; margin: 15px 0; }
+h2 { font-size: clamp(28px, 3.5vw, 38px); line-height: 1.3; margin: 10px 0 20px; }
+h3 { font-size: 20px; margin-bottom: 10px; }
+p { color: var(--text); margin-bottom: 16px; }
+.hero h2 { color: var(--purple); margin-bottom: 18px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.avatar {
+  width: 290px;
+  height: 330px;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 48% 48% 24px 24px;
+  background: linear-gradient(145deg, #e4d9ff, #c5b0f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--purple);
+  font-size: 80px;
+  font-weight: bold;
+}
+.section { padding: 80px 0; }
+.soft { background: var(--light); }
+.section-head { text-align: center; margin-bottom: 35px; }
+.section-head p { max-width: 650px; margin: 0 auto; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 45px;
+  align-items: start;
+}
+.facts { background: var(--light); border-radius: 18px; padding: 25px; }
+.fact { padding: 12px 0; border-bottom: 1px solid #e5ddf5; }
+.fact:last-child { border: 0; }
+.fact strong { display: block; }
+.fact span { color: var(--text); font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.card {
+  padding: 25px;
+  background: white;
+  border: 1px solid #eee9f7;
+  border-radius: 16px;
+  box-shadow: 0 5px 22px rgba(30,20,60,.04);
+}
+.skill-icon { color: var(--purple); font-weight: 800; font-size: 27px; }
+.card p { font-size: 14px; margin-bottom: 0; }
+.timeline { border-left: 3px solid #d9cafa; padding: 5px 0 5px 25px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag {
+  background: var(--light);
+  color: var(--purple);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+.projects { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.project { padding: 0; overflow: hidden; }
+.project-image {
+  min-height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  background: linear-gradient(135deg,#242044,#7652cf);
+}
+.project:nth-child(2) .project-image {
+  background: linear-gradient(135deg,#11152d,#b89616);
+}
+.project:nth-child(3) .project-image {
+  background: linear-gradient(135deg,#174c68,#48a8b7);
+}
+.project-content { padding: 22px; }
+.project-link { color: var(--purple); font-weight: bold; font-size: 14px; }
+.contact-box {
+  padding: 45px;
+  border-radius: 22px;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.contact-box p { max-width: 620px; }
+footer { background: var(--dark); color: white; text-align: center; padding: 25px 0; }
+footer p { color: #ded8ee; margin: 0; font-size: 13px; }
+
+@media(max-width: 800px) {
+  nav { padding: 15px 0; flex-direction: column; align-items: flex-start; }
+  .nav-links { gap: 12px; }
+  .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 35px; }
+  .hero { padding: 60px 0; }
+  .avatar { width: 230px; height: 260px; }
+  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .projects { grid-template-columns: 1fr; }
+  .section { padding: 55px 0; }
+  .contact-box { flex-direction: column; align-items: flex-start; padding: 28px; }
+}
+@media(max-width: 420px) {
+  .grid { grid-template-columns: 1fr; }
+  .nav-links a { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">Ruchika Soni.</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Hello, welcome to my portfolio</span>
+      <h1>Hi, I'm Ruchika Soni</h1>
+      <h2>Web Developer</h2>
+      <p>I build responsive, user-friendly websites using WordPress and modern web technologies. I enjoy solving technical problems and turning ideas into functional websites.</p>
+      <div class="buttons">
+        <a class="btn" href="#projects">View My Work →</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
+      </div>
+    </div>
+    <div class="avatar" aria-label="Ruchika Soni initials">RS</div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">About Me</span>
+      <h2>A little about me</h2>
+      <p>I'm a web developer with 3 years of experience in building, maintaining, and improving websites. I completed my MSc in Computer Science in 2024.</p>
+      <p>I work with WordPress, Elementor, Divi, HTML, CSS, PHP, and JavaScript. I enjoy implementing client requirements, troubleshooting issues, and learning new technologies to improve my development skills.</p>
+      <a href="#contact" class="btn">Let's Connect →</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>Education</strong><span>MSc Computer Science · 2024</span></div>
+      <div class="fact"><strong>Experience</strong><span>3 years in web development</span></div>
+      <div class="fact"><strong>Specialization</strong><span>WordPress and website development</span></div>
+      <div class="fact"><strong>Currently Learning</strong><span>JavaScript and React fundamentals</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">My Skills</span>
+      <h2>Technologies & Tools</h2>
+      <p>The technologies I use to build, customize, and maintain websites.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="skill-icon">W</div><h3>WordPress</h3><p>Website development, customization, and maintenance.</p></div>
+      <div class="card"><div class="skill-icon">E</div><h3>Elementor & Divi</h3><p>Page building and custom layouts.</p></div>
+      <div class="card"><div class="skill-icon">H5</div><h3>HTML & CSS</h3><p>Responsive layouts and website styling.</p></div>
+      <div class="card"><div class="skill-icon">JS</div><h3>JavaScript</h3><p>Learning and building interactive features.</p></div>
+      <div class="card"><div class="skill-icon">PHP</div><h3>PHP</h3><p>WordPress customizations and functionality.</p></div>
+      <div class="card"><div class="skill-icon">R</div><h3>React</h3><p>Building knowledge of React fundamentals.</p></div>
+      <div class="card"><div class="skill-icon">UI</div><h3>Responsive Design</h3><p>Websites for desktop, tablet, and mobile.</p></div>
+      <div class="card"><div class="skill-icon">FIX</div><h3>Problem Solving</h3><p>Debugging, troubleshooting, and website updates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <span class="eyebrow">My Journey</span>
+    <h2>Work Experience</h2>
+    <div class="timeline">
+      <h3>Web Developer</h3>
+      <p><strong>3 years of experience</strong></p>
+      <p>Develop and maintain websites, customize page layouts, implement client requirements, troubleshoot issues, and improve website functionality.</p>
+      <div class="tags">
+        <span class="tag">WordPress</span><span class="tag">Elementor</span>
+        <span class="tag">CSS</span><span class="tag">PHP</span>
+        <span class="tag">Website Maintenance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">My Work</span>
+      <h2>Featured Projects</h2>
+      <p>A selection of projects showcasing website development and customization.</p>
+    </div>
+    <div class="projects">
+      <article class="card project">
+        <div class="project-image">Graphonauta</div>
+        <div class="project-content">
+          <h3>Digital Book Store</h3>
+          <p>An online store for digital books with product pages and multilingual functionality.</p>
+          <div class="tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span></div>
+          <p><a class="project-link" href="https://graphonauta.com/" target="_blank" rel="noopener noreferrer">Visit Website ↗</a></p>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="project-image">Bada Capital</div>
+        <div class="project-content">
+          <h3>Financial Education</h3>
+          <p>Website sections and custom styling for a financial education program.</p>
+          <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor</span></div>
+          <p><span class="project-link">Add project link</span></p>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="project-image">Bus Booking</div>
+        <div class="project-content">
+          <h3>Bus Booking Website</h3>
+          <p>Booking website project focused on bus listings, seat selection, and payments.</p>
+          <div class="tags"><span class="tag">WordPress</span><span class="tag">Booking UI</span></div>
+          <p><span class="project-link">Add project link</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Let's Work Together</h2>
+        <p>I'm open to new opportunities, freelance projects, and collaborations. Let's discuss how I can help build or improve your website.</p>
+      </div>
+      <div class="buttons">
+        <a class="btn" href="mailto:YOUR-EMAIL@example.com">Email Me →</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ruchika Soni · Web Developer</p>
+    <p>Designed with care.</p>
+  </div>
+</footer>
+</body>
+</html>
